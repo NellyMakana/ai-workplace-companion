@@ -1,24 +1,72 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { NAV_ITEMS } from "@/components/app-sidebar";
+import { PageHeader, ResponsibleAiNotice } from "@/components/tool-shell";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Dashboard — AI Workplace Productivity Assistant" },
+      {
+        name: "description",
+        content:
+          "Your workspace overview: email drafting, meeting summaries, task planning, research and chat, all in one prototype.",
+      },
+      { property: "og:title", content: "Dashboard — AI Workplace Productivity Assistant" },
+      {
+        property: "og:description",
+        content: "One dashboard for five AI-style productivity tools. Prototype with mock results.",
+      },
+    ],
+  }),
+  component: Dashboard,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Dashboard() {
+  const tools = NAV_ITEMS.filter((item) => item.url !== "/");
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+    <div className="mx-auto w-full max-w-6xl space-y-8">
+      <PageHeader
+        title="Welcome back"
+        description="Pick a tool to get started. Give it a little context and it will draft something you can edit, copy and use straight away."
       />
+
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        {tools.map((tool) => (
+          <Link key={tool.url} to={tool.url} className="group block focus:outline-none">
+            <Card className="h-full border-border/70 bg-card/60 transition-colors group-hover:border-primary/60 group-hover:bg-card group-focus-visible:border-primary">
+              <CardHeader className="space-y-3">
+                <span className="flex size-10 items-center justify-center rounded-lg bg-primary/12 text-primary transition-colors group-hover:bg-primary/20">
+                  <tool.icon className="size-5" />
+                </span>
+                <CardTitle className="text-base">{tool.title}</CardTitle>
+                <CardDescription className="leading-relaxed">{tool.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                  Open tool
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </CardContent>
+            </Card>
+          </Link>
+        ))}
+      </div>
+
+      <Card className="border-primary/30 bg-primary/5">
+        <CardHeader className="flex-row items-start gap-3 space-y-0">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
+            <ShieldCheck className="size-5" />
+          </span>
+          <div className="space-y-2">
+            <CardTitle className="text-base">Responsible AI</CardTitle>
+            <ResponsibleAiNotice />
+          </div>
+        </CardHeader>
+      </Card>
     </div>
   );
 }
