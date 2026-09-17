@@ -30,7 +30,7 @@ export const Route = createFileRoute("/email")({
       },
     ],
   }),
-  component: EmailGenerator;
+  component: EmailGenerator,
 });
 
 function EmailGenerator() {
