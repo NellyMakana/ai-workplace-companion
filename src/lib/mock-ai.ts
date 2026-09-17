@@ -11,8 +11,9 @@ export function delay(ms: number = MOCK_DELAY) {
 }
 
 function pick<T>(items: T[], variant: number): T {
-  return items[Math.abs(variant) % items.length];
+  return items[Math.abs(variant) % items.length]!;
 }
+
 
 function bulletize(raw: string): string[] {
   return raw
@@ -186,10 +187,11 @@ export function generatePlan(tasksRaw: string, mode: PlanMode, variant: number):
     const offset = (i + variant) % slots.length;
     return {
       id: `${Date.now()}-${i}`,
-      priority: priorities[Math.min(i, priorities.length - 1)],
+      priority: priorities[Math.min(i, priorities.length - 1)]!,
       task: titleCase(task),
-      time: slots[offset],
+      time: slots[offset]!,
       deadline:
+
         mode === "daily"
           ? pick(["Today, 12:00", "Today, 17:00", "Tomorrow, 10:00"], variant + i)
           : pick(["Wednesday", "Thursday", "Friday", "Next Monday"], variant + i),
