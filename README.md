@@ -1,181 +1,140 @@
 # AI Workplace Companion
 
-Build a modern, responsive SaaS-style web app called AI Workplace Productivity Assistant.
+## Project Overview
 
-Design
+**AI Workplace Companion** is a modern, responsive web application designed to help professionals complete common workplace tasks more efficiently using AI-powered tools.
 
-Clean, professional, minimal UI.
+The application provides a simple SaaS-style dashboard where users can generate professional emails, summarise meeting notes, plan tasks, research topics, and interact with an AI workplace assistant.
 
-Dark theme: black/charcoal background, white text, purple highlights.
+This project is designed as a **frontend-only application**. It does not use a backend, database, authentication system, or persistent data storage.
 
-Modern dashboard with left sidebar navigation.
+## Features Implemented
 
-Responsive on desktop, tablet and mobile.
+### Smart Email Generator
 
-Use cards, tabs, buttons, text areas and clear visual hierarchy.
+* Generate professional workplace emails.
+* Enter the email purpose, recipient and key points.
+* Choose between:
 
-Add subtle hover states and polished spacing.
+  * Formal
+  * Friendly
+  * Persuasive
+* Editable AI-generated email output.
+* Copy and regenerate options.
 
-No unnecessary animations.
+### Meeting Notes Summarizer
 
-Important Architecture
+* Summarise lengthy meeting notes.
+* Extract:
 
-This is a frontend-only prototype.
+  * Summary
+  * Action items
+  * Decisions
+  * Deadlines
+* Editable generated results.
+* Copy and regenerate options.
 
-No backend.
+### AI Task Planner
 
-No database.
+* Create daily or weekly task plans.
+* Prioritise tasks.
+* Generate suggested schedules.
+* Display task priority, suggested time, deadline and status.
+* Editable task plans.
 
-No authentication.
+### AI Research Assistant
 
-Do not store user data.
+* Research a topic or question.
+* Paste article or website URLs.
+* Generate:
 
-Do not create accounts or persistent user profiles.
+  * Summary
+  * Key insights
+  * Important points
+  * Recommendations
+* Designed to support research and workplace decision-making.
 
-AI features should use realistic frontend mock responses/placeholders so the app works without a backend or API key.
+### AI Chatbot
 
-Sidebar
+* Interactive workplace AI assistant.
+* Users can enter workplace-related prompts.
+* Displays conversations using a modern chat interface.
+* Includes clear conversation functionality.
 
-Include:
+### User Interface
 
-Dashboard
+* Modern SaaS dashboard.
+* Responsive design for desktop, tablet and mobile.
+* Dark black/charcoal theme.
+* White text with purple highlights.
+* Sidebar navigation.
+* Clean cards, forms and buttons.
+* Editable AI outputs.
+* Loading and empty states.
+* Input validation.
+* Responsible AI disclaimer.
 
-Email Generator
+## Technologies and Tools Used
 
-Meeting Summarizer
+* **HTML5** – Application structure.
+* **CSS3** – Styling and responsive design.
+* **JavaScript / TypeScript** – Application functionality.
+* **React** – Frontend user interface.
+* **Lovable** – Application development and prototyping.
+* **Responsive Web Design** – Support for desktop, tablet and mobile devices.
 
-Task Planner
+> The application does not require a backend or database and does not permanently store user information.
 
-Research Assistant
+## Setup Instructions
 
-AI Chat
+### 1. Clone or download the project
 
-Dashboard
+Download the project files from the Lovable project or clone the project repository.
 
-Show a welcome message and cards linking to each AI tool. Include a short Responsible AI disclaimer stating that AI-generated content should be reviewed before use and may contain errors.
+### 2. Install dependencies
 
-1. Smart Email Generator
+Open the project folder in a terminal and install the required dependencies:
 
-Create fields for:
+```bash
+npm install
+```
 
-Email purpose/context
+### 3. Start the development server
 
-Recipient
+Run:
 
-Key points
-
-Tone: Formal, Friendly, Persuasive
-
-Generate Email button
-
-Display an editable generated email with Copy and Regenerate actions.
-
-2. Meeting Notes Summarizer
-
-Provide a large text area for meeting notes.
-Generate a structured result containing:
-
-Summary
-
-Action Items
-
-Decisions
-
-Deadlines
-
-Make the output editable and include Copy/Regenerate actions.
-
-3. AI Task Planner
-
-Allow users to enter tasks and select:
-
-Daily Plan
-
-Weekly Plan
-
-Generate a prioritised schedule showing:
-
-Priority
-
-Task
-
-Suggested time
-
-Deadline
-
-Status
-
-Allow the generated plan to be edited.
-
-4. AI Research Assistant
-
-Provide a text field where users can:
-
-Enter a topic/question
-
-Paste a URL/link to an article or website
-
-Generate a structured result containing:
-
-Summary
-
-Key Insights
-
-Recommendations
-
-Important Points
-
-Clearly show that URL summarisation is a frontend prototype/mock feature and does not actually fetch external webpages without an API/backend.
-
-5. AI Chat
-
-Create a modern chatbot interface with:
-
-User/AI message bubbles
-
-Text input
-
-Send button
-
-Clear conversation button
-
-Use mock AI responses so it functions without a backend.
-
-General UX
-
-Every tool should have clear instructions and useful placeholder text.
-
-Generated outputs must be editable.
-
-Include loading states when generating mock results.
-
-Include empty states and validation for required fields.
-
-Keep the experience simple enough for non-technical professionals.
-
-Use consistent purple accent buttons and UI highlights.
-
-Add the Responsible AI disclaimer in the dashboard/footer.
-
-Build the complete polished frontend in one implementation and prioritise usability, responsiveness and visual consistency.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/608ace60-8843-4985-b10f-f9c15673d41a).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
 npm run dev
 ```
+
+### 4. Open the application
+
+Open the local development URL provided by the terminal, usually:
+
+```text
+http://localhost:5173
+```
+
+### 5. Build for production
+
+To create a production build, run:
+
+```bash
+npm run build
+```
+
+The generated production files can then be deployed to a suitable static hosting platform.
+
+## Responsible AI
+
+AI-generated content is intended to assist users with workplace tasks. Users should review, verify and edit AI-generated information before using it for professional communication, research or decision-making.
+
+The prototype uses frontend/mock AI responses and does not store user data.
+
+## Author
+
+**Miss A**
+
+AI Workplace Productivity Assistant
+South Africa
+
